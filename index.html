@@ -1,324 +1,21 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="win95">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advokat Babayki // Personal Homepage</title>
     <style>
-        /* ==========================================================================
-           BASE RESET
-           ========================================================================== */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
-        }
-
-        /* ==========================================================================
-           10 СТИЛЕЙ (CSS VARIABLES)
-           ========================================================================== */
-        
-        /* 1. Windows 95 Classic */
-        [data-theme="win95"] {
-            --bg: #008080;
-            --card-bg: #c0c0c0;
-            --text: #000000;
-            --title-bg: linear-gradient(90deg, #000080, #1084d0);
-            --title-text: #ffffff;
-            --border: 2px solid;
-            --border-color: #ffffff #808080 #808080 #ffffff;
-            --shadow: 4px 4px 10px rgba(0,0,0,0.5);
-            --font: "MS Sans Serif", "Tahoma", monospace;
-            --radius: 0px;
-            --inner-bg: #ffffff;
-            --inner-border: 2px inset #808080;
-            --btn-bg: #c0c0c0;
-            --btn-text: #000000;
-            --btn-border: 2px solid;
-            --btn-border-color: #ffffff #808080 #808080 #ffffff;
-            --btn-hover: #d4d0c8;
-            --marquee-bg: #000000;
-            --marquee-text: #00ff00;
-            --counter-bg: #000000;
-            --counter-text: #ff0000;
-            --icon-bg: #e0e0e0;
-            --icon-color: #000080;
-        }
-
-        /* 2. Cyberpunk Neon */
-        [data-theme="cyberpunk"] {
-            --bg: #08090d;
-            --card-bg: #121520;
-            --text: #00f0ff;
-            --title-bg: #ff0055;
-            --title-text: #ffffff;
-            --border: 2px solid #00f0ff;
-            --border-color: #00f0ff;
-            --shadow: 0 0 18px rgba(0, 240, 255, 0.4);
-            --font: "Courier New", monospace;
-            --radius: 4px;
-            --inner-bg: #0a0c14;
-            --inner-border: 1px solid #ff0055;
-            --btn-bg: #1a1d2e;
-            --btn-text: #00f0ff;
-            --btn-border: 1px solid #00f0ff;
-            --btn-hover: #ff0055;
-            --btn-hover-text: #ffffff;
-            --marquee-bg: #000000;
-            --marquee-text: #ffe600;
-            --counter-bg: #ff0055;
-            --counter-text: #ffffff;
-            --icon-bg: #ff0055;
-            --icon-color: #ffffff;
-        }
-
-        /* 3. Glassmorphism */
-        [data-theme="glassmorphism"] {
-            --bg: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
-            --card-bg: rgba(255, 255, 255, 0.08);
-            --backdrop-filter: blur(16px);
-            --text: #f8fafc;
-            --title-bg: rgba(255, 255, 255, 0.12);
-            --title-text: #38bdf8;
-            --border: 1px solid rgba(255, 255, 255, 0.18);
-            --shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-            --font: system-ui, -apple-system, sans-serif;
-            --radius: 16px;
-            --inner-bg: rgba(255, 255, 255, 0.04);
-            --inner-border: 1px solid rgba(255, 255, 255, 0.1);
-            --btn-bg: rgba(255, 255, 255, 0.08);
-            --btn-text: #f8fafc;
-            --btn-border: 1px solid rgba(255, 255, 255, 0.2);
-            --btn-hover: rgba(56, 189, 248, 0.25);
-            --marquee-bg: rgba(0, 0, 0, 0.4);
-            --marquee-text: #38bdf8;
-            --counter-bg: rgba(56, 189, 248, 0.25);
-            --counter-text: #38bdf8;
-            --icon-bg: rgba(255, 255, 255, 0.15);
-            --icon-color: #38bdf8;
-        }
-
-        /* 4. Neumorphism */
-        [data-theme="neumorphism"] {
-            --bg: #e0e5ec;
-            --card-bg: #e0e5ec;
-            --text: #334155;
-            --title-bg: #e0e5ec;
-            --title-text: #2563eb;
-            --border: none;
-            --shadow: 12px 12px 24px #a3b1c6, -12px -12px 24px #ffffff;
-            --font: system-ui, sans-serif;
-            --radius: 20px;
-            --inner-bg: #e0e5ec;
-            --inner-border: none;
-            --inner-shadow: inset 4px 4px 8px #a3b1c6, inset -4px -4px 8px #ffffff;
-            --btn-bg: #e0e5ec;
-            --btn-text: #334155;
-            --btn-border: none;
-            --btn-shadow: 5px 5px 10px #a3b1c6, -5px -5px 10px #ffffff;
-            --btn-hover: #d1d9e6;
-            --marquee-bg: #e0e5ec;
-            --marquee-text: #2563eb;
-            --counter-bg: #2563eb;
-            --counter-text: #ffffff;
-            --icon-bg: #2563eb;
-            --icon-color: #ffffff;
-        }
-
-        /* 5. Clean Minimal */
-        [data-theme="minimal"] {
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #0f172a;
-            --title-bg: #0f172a;
-            --title-text: #ffffff;
-            --border: 1px solid #e2e8f0;
-            --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
-            --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            --radius: 12px;
-            --inner-bg: #f8fafc;
-            --inner-border: 1px solid #f1f5f9;
-            --btn-bg: #ffffff;
-            --btn-text: #0f172a;
-            --btn-border: 1px solid #cbd5e1;
-            --btn-hover: #f1f5f9;
-            --marquee-bg: #0f172a;
-            --marquee-text: #f8fafc;
-            --counter-bg: #e2e8f0;
-            --counter-text: #0f172a;
-            --icon-bg: #0f172a;
-            --icon-color: #ffffff;
-        }
-
-        /* 6. Dracula Dark Dev */
-        [data-theme="dracula"] {
-            --bg: #282a36;
-            --card-bg: #44475a;
-            --text: #f8f8f2;
-            --title-bg: #6272a4;
-            --title-text: #50fa7b;
-            --border: 1px solid #6272a4;
-            --shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            --font: "Fira Code", Consolas, monospace;
-            --radius: 8px;
-            --inner-bg: #282a36;
-            --inner-border: 1px solid #6272a4;
-            --btn-bg: #282a36;
-            --btn-text: #f8f8f2;
-            --btn-border: 1px solid #bd93f9;
-            --btn-hover: #bd93f9;
-            --btn-hover-text: #282a36;
-            --marquee-bg: #21222c;
-            --marquee-text: #50fa7b;
-            --counter-bg: #ff79c6;
-            --counter-text: #282a36;
-            --icon-bg: #bd93f9;
-            --icon-color: #282a36;
-        }
-
-        /* 7. Frutiger Aero */
-        [data-theme="frutiger"] {
-            --bg: linear-gradient(180deg, #0284c7 0%, #38bdf8 45%, #22c55e 100%);
-            --card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(224, 242, 254, 0.8) 100%);
-            --backdrop-filter: blur(10px);
-            --text: #0f172a;
-            --title-bg: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%);
-            --title-text: #ffffff;
-            --border: 2px solid rgba(255, 255, 255, 0.8);
-            --shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-            --font: "Segoe UI", Tahoma, sans-serif;
-            --radius: 14px;
-            --inner-bg: rgba(255, 255, 255, 0.65);
-            --inner-border: 1px solid rgba(255, 255, 255, 0.9);
-            --btn-bg: linear-gradient(180deg, #ffffff 0%, #e0f2fe 100%);
-            --btn-text: #0369a1;
-            --btn-border: 1px solid #7dd3fc;
-            --btn-hover: #bae6fd;
-            --marquee-bg: linear-gradient(180deg, #0284c7 0%, #0369a1 100%);
-            --marquee-text: #ffffff;
-            --counter-bg: #0284c7;
-            --counter-text: #ffffff;
-            --icon-bg: #0284c7;
-            --icon-color: #ffffff;
-        }
-
-        /* 8. Craft Paper */
-        [data-theme="paper"] {
-            --bg: #e5d9c5;
-            --card-bg: #fdfbf7;
-            --text: #3d3228;
-            --title-bg: #8c4a27;
-            --title-text: #fdfbf7;
-            --border: 2px dashed #b5a68d;
-            --shadow: 6px 6px 0px #c2b49b;
-            --font: "Georgia", serif;
-            --radius: 2px;
-            --inner-bg: #f5efe6;
-            --inner-border: 1px solid #d4c8b5;
-            --btn-bg: #fdfbf7;
-            --btn-text: #3d3228;
-            --btn-border: 1px solid #8c4a27;
-            --btn-hover: #f5efe6;
-            --marquee-bg: #3d3228;
-            --marquee-text: #fdfbf7;
-            --counter-bg: #8c4a27;
-            --counter-text: #fdfbf7;
-            --icon-bg: #8c4a27;
-            --icon-color: #fdfbf7;
-        }
-
-        /* 9. Neo-Brutalism */
-        [data-theme="brutalism"] {
-            --bg: #fef08a;
-            --card-bg: #ffffff;
-            --text: #000000;
-            --title-bg: #ff0055;
-            --title-text: #ffffff;
-            --border: 3px solid #000000;
-            --shadow: 6px 6px 0px #000000;
-            --font: "Arial Black", "Trebuchet MS", sans-serif;
-            --radius: 0px;
-            --inner-bg: #a7f3d0;
-            --inner-border: 3px solid #000000;
-            --btn-bg: #3b82f6;
-            --btn-text: #ffffff;
-            --btn-border: 3px solid #000000;
-            --btn-shadow: 3px 3px 0px #000000;
-            --btn-hover: #ff0055;
-            --btn-hover-text: #ffffff;
-            --marquee-bg: #000000;
-            --marquee-text: #fef08a;
-            --counter-bg: #ff0055;
-            --counter-text: #ffffff;
-            --icon-bg: #000000;
-            --icon-color: #ffffff;
-        }
-
-        /* 10. Unix CLI Terminal */
-        [data-theme="terminal"] {
-            --bg: #050505;
-            --card-bg: #000000;
-            --text: #00ff66;
-            --title-bg: #00ff66;
-            --title-text: #000000;
-            --border: 1px solid #00ff66;
-            --shadow: 0 0 15px rgba(0, 255, 102, 0.2);
-            --font: "Courier New", monospace;
-            --radius: 0px;
-            --inner-bg: #080808;
-            --inner-border: 1px solid #00ff66;
-            --btn-bg: #000000;
-            --btn-text: #00ff66;
-            --btn-border: 1px solid #00ff66;
-            --btn-hover: #00ff66;
-            --btn-hover-text: #000000;
-            --marquee-bg: #00ff66;
-            --marquee-text: #000000;
-            --counter-bg: #00ff66;
-            --counter-text: #000000;
-            --icon-bg: #00ff66;
-            --icon-color: #000000;
-        }
-
-        /* ==========================================================================
-           LAYOUT & COMPONENT STYLES
-           ========================================================================== */
-        
-        .theme-selector-panel {
-            position: fixed;
-            top: 12px;
-            right: 12px;
-            z-index: 9999;
-            background: #111111;
-            color: #ffffff;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-family: sans-serif;
-            font-size: 13px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid #333;
-        }
-
-        .theme-selector-panel select {
-            background: #222222;
-            color: #ffffff;
-            border: 1px solid #444;
-            padding: 4px 8px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 12px;
-            outline: none;
         }
 
         body {
-            background: var(--bg);
-            font-family: var(--font);
-            color: var(--text);
-            padding: 20px 15px;
+            background-color: #008080;
+            font-family: "MS Sans Serif", "Tahoma", "Courier New", monospace;
+            color: #000;
+            padding: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -326,22 +23,19 @@
         }
 
         .window {
-            background: var(--card-bg);
+            background: #c0c0c0;
             width: 100%;
             max-width: 680px;
-            border: var(--border);
-            border-color: var(--border-color, initial);
-            box-shadow: var(--shadow);
-            border-radius: var(--radius);
-            backdrop-filter: var(--backdrop-filter, none);
-            overflow: hidden;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
         }
 
         .title-bar {
-            background: var(--title-bg);
-            color: var(--title-text);
+            background: linear-gradient(90deg, #000080, #1084d0);
+            color: #ffffff;
             font-weight: bold;
-            padding: 6px 10px;
+            padding: 3px 6px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -349,59 +43,56 @@
         }
 
         .title-bar-controls button {
-            width: 18px;
-            height: 16px;
-            font-size: 10px;
+            width: 16px;
+            height: 14px;
+            font-size: 9px;
+            line-height: 10px;
             font-weight: bold;
-            background: var(--btn-bg);
-            color: var(--btn-text);
-            border: var(--btn-border, 1px solid #888);
-            border-radius: var(--radius);
+            background: #c0c0c0;
+            border: 1px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
             cursor: pointer;
             margin-left: 2px;
         }
 
         .window-body {
-            padding: 14px;
+            padding: 12px;
         }
 
         .marquee-box {
-            background: var(--marquee-bg);
-            color: var(--marquee-text);
-            font-family: var(--font);
-            padding: 6px;
-            border: var(--inner-border);
-            border-radius: var(--radius);
+            background: #000;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
+            padding: 4px;
+            border: 2px inset #808080;
             margin-bottom: 12px;
             font-size: 13px;
-            box-shadow: var(--inner-shadow, none);
         }
 
         .profile-card {
-            background: var(--inner-bg);
-            border: var(--inner-border);
-            box-shadow: var(--inner-shadow, none);
-            border-radius: var(--radius);
-            padding: 14px;
+            background: #fff;
+            border: 2px inset #808080;
+            padding: 12px;
             margin-bottom: 12px;
             display: flex;
             flex-wrap: wrap;
-            gap: 14px;
+            gap: 12px;
             align-items: center;
         }
 
+        /* Контейнер для аватарки */
         .avatar {
             width: 80px;
             height: 80px;
-            background: rgba(128, 128, 128, 0.2);
-            border: var(--btn-border, 1px solid #888);
-            border-radius: var(--radius);
+            background: #e0e0e0;
+            border: 2px solid #808080;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
             overflow: hidden;
             font-size: 10px;
+            font-family: "Courier New", monospace;
         }
 
         .avatar img {
@@ -418,6 +109,7 @@
         .profile-info h1 {
             font-size: 18px;
             margin-bottom: 6px;
+            color: #000080;
         }
 
         .profile-info p {
@@ -426,20 +118,16 @@
         }
 
         .links-section {
-            background: var(--inner-bg);
-            border: var(--inner-border);
-            box-shadow: var(--inner-shadow, none);
-            border-radius: var(--radius);
-            padding: 14px;
+            background: #ffffff;
+            border: 2px inset #808080;
+            padding: 12px;
         }
 
         .links-section h2 {
             font-size: 14px;
-            background: var(--btn-bg);
-            color: var(--btn-text);
-            padding: 4px 8px;
-            border: var(--btn-border, 1px solid #888);
-            border-radius: var(--radius);
+            background: #c0c0c0;
+            padding: 2px 6px;
+            border: 1px solid #808080;
             margin-bottom: 10px;
             display: inline-block;
         }
@@ -448,36 +136,41 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
 
         .social-links a {
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 8px 12px;
-            background: var(--btn-bg);
-            color: var(--btn-text);
+            padding: 6px 10px;
+            background: #c0c0c0;
+            color: #000;
             text-decoration: none;
             font-weight: bold;
             font-size: 13px;
-            border: var(--btn-border, 1px solid #888);
-            border-radius: var(--radius);
-            box-shadow: var(--btn-shadow, none);
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+        }
+
+        .social-links a:active {
+            border-color: #808080 #ffffff #ffffff #808080;
+            padding: 7px 9px 5px 11px;
         }
 
         .social-links a:hover {
-            background: var(--btn-hover, var(--text));
-            color: var(--btn-hover-text, var(--card-bg));
+            background: #d4d0c8;
+            color: #000080;
         }
 
         .icon {
+            font-family: "Courier New", monospace;
             font-weight: bold;
-            color: var(--icon-color);
-            background: var(--icon-bg);
-            padding: 2px 6px;
-            font-size: 11px;
-            border-radius: var(--radius);
+            color: #000080;
+            background: #e0e0e0;
+            border: 1px solid #808080;
+            padding: 1px 4px;
+            font-size: 12px;
             min-width: 38px;
             text-align: center;
         }
@@ -486,56 +179,44 @@
             margin-top: 12px;
             display: flex;
             justify-content: space-between;
-            gap: 8px;
+            gap: 6px;
             font-size: 11px;
         }
 
         .status-field {
-            background: var(--inner-bg);
-            border: var(--inner-border);
-            box-shadow: var(--inner-shadow, none);
-            border-radius: var(--radius);
-            padding: 4px 8px;
+            background: #c0c0c0;
+            border: 2px inset #808080;
+            padding: 2px 5px;
             flex: 1;
         }
 
         .counter {
-            background: var(--counter-bg);
-            color: var(--counter-text);
+            background: #000;
+            color: #ff0000;
+            font-family: "Courier New", monospace;
             font-weight: bold;
-            padding: 1px 6px;
-            border-radius: var(--radius);
+            padding: 1px 4px;
+            border: 1px solid #808080;
         }
 
         @media (max-width: 480px) {
-            body { padding: 5px; }
-            .profile-card { flex-direction: column; text-align: center; }
-            .status-bar { flex-direction: column; }
+            body {
+                padding: 5px;
+            }
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .status-bar {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Всплывающая панель переключения 10 тем -->
-    <div class="theme-selector-panel">
-        <label for="themeSelect">🎨 Выбрать стиль:</label>
-        <select id="themeSelect" onchange="document.documentElement.setAttribute('data-theme', this.value)">
-            <option value="win95">1. Win95 Retro (Оригинал)</option>
-            <option value="cyberpunk">2. Cyberpunk Neon</option>
-            <option value="glassmorphism">3. Glassmorphism / Modern Glass</option>
-            <option value="neumorphism">4. Neumorphism / Soft UI</option>
-            <option value="minimal">5. Clean Minimal / Notion</option>
-            <option value="dracula">6. Dracula Dark Dev</option>
-            <option value="frutiger">7. Frutiger Aero (Windows 7)</option>
-            <option value="paper">8. Craft Paper / Vintage</option>
-            <option value="brutalism">9. Neo-Brutalism</option>
-            <option value="terminal">10. Unix CLI Terminal</option>
-        </select>
-    </div>
-
-    <!-- Основное окно сайта -->
     <div class="window">
-        
+        <!-- Заголовок окна -->
         <div class="title-bar">
             <span>C:\Advokat_Babayki\index.html</span>
             <div class="title-bar-controls">
@@ -547,10 +228,14 @@
 
         <div class="window-body">
             
+            <!-- ======================================================= -->
+            <!--   ИЗМЕНЯТЬ БЕГУЩУЮ ЗЕЛЕНУЮ СТРОКУ ВНУТРИ ТЕГА MARQUEE:  -->
+            <!-- ======================================================= -->
             <div class="marquee-box">
-                <marquee scrollamount="4">*** WELCOME TO THE INTERNET ***</marquee>
+                <marquee scrollamount="4">*** WELCOME TO THE INTERNET***</marquee>
             </div>
 
+            <!-- Карточка профиля -->
             <div class="profile-card">
                 <div class="avatar">
                     <img src="IMG_20260922_114115_730.jpg" alt="Advokat Babayki" onerror="if(this.src.endsWith('.jpeg')){this.src='avatar.jpg';}else{this.parentElement.innerHTML='[ AVATAR ]';}">
@@ -561,10 +246,13 @@
                 </div>
             </div>
 
+            <!-- Список соцсетей -->
             <div class="links-section">
                 <h2>[Контакты & Профили]</h2>
                 
                 <ul class="social-links">
+                    
+                    <!-- TELEGRAM -->
                     <li>
                         <a href="https://t.me/Advokat_Babayki" target="_blank" rel="noopener">
                             <span class="icon">[TG]</span>
@@ -572,15 +260,24 @@
                         </a>
                     </li>
 
+                    <!-- GITHUB -->
                     <li>
                         <a href="https://github.com/Advokat-Babayki" target="_blank" rel="noopener">
                             <span class="icon">[GH]</span>
                             <span>GitHub: Advokat-Babayki</span>
                         </a>
                     </li>
+
+                    <!--
+                        ЕСЛИ ПОТРЕБУЕТСЯ ДОБАВИТЬ НОВУЮ СОЦСЕТЬ:
+                        Скопируй один из блоков <li> выше, вставь его сюда
+                        и поменяй ссылку href, маркер [..] и название.
+                    -->
+
                 </ul>
             </div>
 
+            <!-- Статус-бар внизу -->
             <div class="status-bar">
                 <div class="status-field">Status: 200 OK</div>
                 <div class="status-field">
