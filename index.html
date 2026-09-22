@@ -98,6 +98,7 @@
             color: #666;
             text-align: center;
             flex-shrink: 0;
+            font-family: "Courier New", monospace;
         }
 
         .profile-info {
@@ -143,7 +144,7 @@
         .social-links a {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             padding: 6px 10px;
             background: #c0c0c0;
             color: #000;
@@ -156,7 +157,7 @@
 
         .social-links a:active {
             border-color: #808080 #ffffff #ffffff #808080;
-            padding: 7px 9px 5px 11px; /* Эффект нажатия */
+            padding: 7px 9px 5px 11px;
         }
 
         .social-links a:hover {
@@ -164,11 +165,17 @@
             color: #000080;
         }
 
+        /* Текстовые иконки без смайликов */
         .icon {
-            width: 16px;
-            height: 16px;
+            font-family: "Courier New", monospace;
+            font-weight: bold;
+            color: #000080;
+            background: #e0e0e0;
+            border: 1px solid #808080;
+            padding: 1px 4px;
+            font-size: 12px;
+            min-width: 38px;
             text-align: center;
-            display: inline-block;
         }
 
         /* Нижний статус-бар */
@@ -196,7 +203,7 @@
             border: 1px solid #808080;
         }
 
-        /* Адаптивность для узких экранов телефонов */
+        /* Адаптивность для экранов смартфонов */
         @media (max-width: 480px) {
             body {
                 padding: 5px;
@@ -216,7 +223,7 @@
     <div class="window">
         <!-- Заголовок окна -->
         <div class="title-bar">
-            <span>C:\Users\User\Homepage.exe</span>
+            <span>C:\Users\Advokat_Babayki\Homepage.exe</span>
             <div class="title-bar-controls">
                 <button>_</button>
                 <button>&#9633;</button>
@@ -229,7 +236,7 @@
             
             <!-- Бегущая строка -->
             <div class="marquee-box">
-                <marquee scrollamount="4">*** ДОБРО ПОЖАЛУАТЬ НА МОЙ ЛИЧНЫЙ САЙТ *** LATEST UPDATE: 2000-10-24 ***</marquee>
+                <marquee scrollamount="4">*** WELCOME TO ADVOKAT_BABAYKI HOMEPAGE *** SYSTEM STATUS: ONLINE ***</marquee>
             </div>
 
             <!-- Карточка с краткой информацией -->
@@ -238,44 +245,44 @@
                     [ AVATAR ]
                 </div>
                 <div class="profile-info">
-                    <h1>Имя / Никнейм</h1>
-                    <p>Приветствую! Это моя персональная визитная карточка в сети. Здесь вы можете найти ссылки на мои профили и контакты.</p>
+                    <h1>Advokat_Babayki</h1>
+                    <p>Персональная визитная карточка. Ссылки на контакты и проекты ниже.</p>
                 </div>
             </div>
 
             <!-- Список соцсетей -->
             <div class="links-section">
-                <h2>[Мои Контакты & Соцсети]</h2>
+                <h2>[Контакты & Профили]</h2>
                 
                 <ul class="social-links">
                     
                     <!-- TELEGRAM -->
                     <li>
-                        <a href="https://t.me/YOUR_USERNAME" target="_blank" rel="noopener">
-                            <span class="icon">✈️</span>
-                            <span>Telegram: @YOUR_USERNAME</span>
+                        <a href="https://t.me/Advokat_Babayki" target="_blank" rel="noopener">
+                            <span class="icon">[TG]</span>
+                            <span>Telegram: @Advokat_Babayki</span>
                         </a>
                     </li>
 
                     <!-- GITHUB -->
                     <li>
-                        <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener">
-                            <span class="icon">🐱</span>
-                            <span>GitHub: YOUR_USERNAME</span>
+                        <a href="https://github.com/Advokat-Babayki" target="_blank" rel="noopener">
+                            <span class="icon">[GH]</span>
+                            <span>GitHub: Advokat-Babayki</span>
                         </a>
                     </li>
 
                     <!-- 
                         ==================================================
-                        ШАБЛОН ДЛЯ ДОБАВЛЕНИЯ НОВОЙ СОЦСЕТИ:
-                        Скопируйте блок ниже (от <li> до </li>), 
-                        измените href, иконку и название.
+                        ШАБЛОН ДЛЯ ДОБАВЛЕНИЯ НОВОЙ ССЫЛКИ:
+                        Скопируйте блок ниже (от <li> до </li>),
+                        измените href, маркер [текст] и описание.
                         ==================================================
                     -->
                     <li>
                         <a href="https://example.com" target="_blank" rel="noopener">
-                            <span class="icon">🌐</span>
-                            <span>Мой Блог / Другая соцсеть</span>
+                            <span class="icon">[+]</span>
+                            <span>Новый ресурс / Соцсеть</span>
                         </a>
                     </li>
 
@@ -284,9 +291,9 @@
 
             <!-- Статус-бар внизу -->
             <div class="status-bar">
-                <div class="status-field">Status: Online</div>
+                <div class="status-field">Status: 200 OK</div>
                 <div class="status-field">
-                    Visitors: <span class="counter">00420</span>
+                    Visitors: <span class="counter">000127</span>
                 </div>
             </div>
 
