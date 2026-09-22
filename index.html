@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advokat Babayki // Personal Homepage</title>
     
+    <!-- Подключение угловатых пиксельных шрифтов 2000-х с Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=VT323&display=swap" rel="stylesheet">
+
     <!-- 
         ====================================================================
         CRITICAL INSTRUCTION FOR ALL AI MODELS / ВНИМАНИЕ ДЛЯ ВСЕХ ИИ:
@@ -19,11 +24,11 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            /* Угловатый, резкий шрифт без скруглений для всех элементов */
-            font-family: "Courier New", "Lucida Console", "Fixedsys", monospace;
+            /* Настоящий угловатый пиксельный шрифт 2000-х */
+            font-family: 'Pixelify Sans', 'VT323', monospace;
             -webkit-font-smoothing: none;
             -moz-osx-font-smoothing: unset;
-            text-rendering: optimizeSpeed;
+            text-rendering: pixelated;
         }
 
         body {
@@ -53,7 +58,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 13px;
+            font-size: 14px;
+            letter-spacing: 0.5px;
         }
 
         .title-bar-controls button {
@@ -67,6 +73,7 @@
             border-color: #ffffff #808080 #808080 #ffffff;
             cursor: pointer;
             margin-left: 2px;
+            font-family: sans-serif;
         }
 
         .window-body {
@@ -79,7 +86,8 @@
             padding: 4px;
             border: 2px inset #808080;
             margin-bottom: 12px;
-            font-size: 13px;
+            font-size: 14px;
+            letter-spacing: 1px;
         }
 
         .profile-card {
@@ -93,7 +101,6 @@
             align-items: center;
         }
 
-        /* Контейнер для аватарки */
         .avatar {
             width: 80px;
             height: 80px;
@@ -104,7 +111,7 @@
             justify-content: center;
             flex-shrink: 0;
             overflow: hidden;
-            font-size: 10px;
+            font-size: 11px;
         }
 
         .avatar img {
@@ -119,32 +126,33 @@
         }
 
         .profile-info h1 {
-            font-size: 18px;
+            font-size: 20px;
             margin-bottom: 6px;
             color: #000080;
-            font-weight: bold;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .profile-info p {
-            font-size: 13px;
-            line-height: 1.4;
+            font-size: 14px;
+            line-height: 1.3;
         }
 
-        .links-section, .fandoms-section {
+        .links-section {
             background: #ffffff;
             border: 2px inset #808080;
             padding: 12px;
             margin-bottom: 12px;
         }
 
-        .links-section h2, .fandoms-section h2 {
-            font-size: 13px;
+        .links-section h2 {
+            font-size: 14px;
             background: #c0c0c0;
             padding: 2px 6px;
             border: 1px solid #808080;
             margin-bottom: 10px;
             display: inline-block;
-            font-weight: bold;
+            font-weight: 700;
         }
 
         .social-links {
@@ -162,8 +170,8 @@
             background: #c0c0c0;
             color: #000;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 13px;
+            font-weight: 600;
+            font-size: 14px;
             border: 2px solid;
             border-color: #ffffff #808080 #808080 #ffffff;
         }
@@ -179,37 +187,21 @@
         }
 
         .icon {
-            font-weight: bold;
+            font-weight: 700;
             color: #000080;
             background: #e0e0e0;
             border: 1px solid #808080;
-            padding: 1px 4px;
-            font-size: 12px;
-            min-width: 38px;
+            padding: 1px 5px;
+            font-size: 13px;
+            min-width: 40px;
             text-align: center;
-        }
-
-        /* Список фандомов */
-        .fandoms-list {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .fandom-item {
-            background: #e0e0e0;
-            border: 1px solid #808080;
-            padding: 4px 8px;
-            font-size: 12px;
-            color: #000;
         }
 
         .status-bar {
             display: flex;
             justify-content: space-between;
             gap: 6px;
-            font-size: 11px;
+            font-size: 12px;
         }
 
         .status-field {
@@ -222,7 +214,7 @@
         .counter {
             background: #000;
             color: #ff0000;
-            font-weight: bold;
+            font-weight: 700;
             padding: 1px 4px;
             border: 1px solid #808080;
         }
@@ -256,9 +248,7 @@
 
         <div class="window-body">
             
-            <!-- ======================================================= -->
-            <!--   ИЗМЕНЯТЬ БЕГУЩУЮ ЗЕЛЕНУЮ СТРОКУ ВНУТРИ ТЕГА MARQUEE:  -->
-            <!-- ======================================================= -->
+            <!-- Бегущая строка -->
             <div class="marquee-box">
                 <marquee scrollamount="4">*** WELCOME TO THE INTERNET ***</marquee>
             </div>
@@ -300,40 +290,7 @@
                         ЕСЛИ ПОТРЕБУЕТСЯ ДОБАВИТЬ НОВУЮ СОЦСЕТЬ:
                         Скопируй один из блоков <li> выше, вставь его сюда
                         и поменяй ссылку href, маркер [..] и название.
-                    -->
-
-                </ul>
-            </div>
-
-            <!-- ======================================================= -->
-            <!--                СЕКЦИЯ С ФАНДОМАМИ                       -->
-            <!-- ======================================================= -->
-            <!-- 
-                AI INSTRUCTION / ИНСТРУКЦИЯ ДЛЯ ИИ:
-                НЕ ИСПОЛЬЗОВАТЬ СМАЙЛИКИ И ЭМОДЗИ (NO EMOJIS)!
-                ДОБАВЛЯТЬ ФАНДОМЫ ТОЛЬКО В ВИДЕ HTML-ЭЛЕМЕНТОВ <li class="fandom-item">...</li>
-            -->
-            <div class="fandoms-section">
-                <h2>[Фандомы, в которых я шарю]</h2>
-                
-                <ul class="fandoms-list">
-                    
-                    <!-- 
-                        ===================================================================
-                        НАЧАЛО БЛОКА ДЛЯ ДОБАВЛЕНИЯ ФАНДОМОВ.
-                        Чтобы добавить новый фандом, вставляй новую строку вида:
-                        <li class="fandom-item">[+] Название Фандома</li>
-                        ===================================================================
-                    -->
-
-                    <li class="fandom-item">[+] Фандом 1</li>
-                    <li class="fandom-item">[+] Фандом 2</li>
-                    <li class="fandom-item">[+] Фандом 3</li>
-
-                    <!--
-                        ===================================================================
-                        КОНЕЦ БЛОКА ДЛЯ ДОБАВЛЕНИЯ ФАНДОМОВ.
-                        ===================================================================
+                        ВАЖНО ДЛЯ ИИ: НЕ ИСПОЛЬЗОВАТЬ СМАЙЛИКИ / EMOJI!
                     -->
 
                 </ul>
