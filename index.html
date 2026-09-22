@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Личная страница // Personal Homepage</title>
+    <title>Advokat Babayki // Personal Homepage</title>
     <style>
-        /* Основной сброс и стиль фона в духе рабочего стола Win2k */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -13,7 +12,7 @@
         }
 
         body {
-            background-color: #008080; /* Классический бирюзовый teal */
+            background-color: #008080;
             font-family: "MS Sans Serif", "Tahoma", "Courier New", monospace;
             color: #000;
             padding: 15px;
@@ -23,7 +22,6 @@
             min-height: 100vh;
         }
 
-        /* Главное окно программы / сайта */
         .window {
             background: #c0c0c0;
             width: 100%;
@@ -33,7 +31,6 @@
             box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
         }
 
-        /* Заголовок окна */
         .title-bar {
             background: linear-gradient(90deg, #000080, #1084d0);
             color: #ffffff;
@@ -58,12 +55,10 @@
             margin-left: 2px;
         }
 
-        /* Внутреннее содержимое окна */
         .window-body {
             padding: 12px;
         }
 
-        /* Бегущая строка */
         .marquee-box {
             background: #000;
             color: #00ff00;
@@ -74,7 +69,6 @@
             font-size: 13px;
         }
 
-        /* Секция профиля */
         .profile-card {
             background: #fff;
             border: 2px inset #808080;
@@ -86,6 +80,7 @@
             align-items: center;
         }
 
+        /* Контейнер для аватарки */
         .avatar {
             width: 80px;
             height: 80px;
@@ -94,11 +89,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 10px;
-            color: #666;
-            text-align: center;
             flex-shrink: 0;
-            font-family: "Courier New", monospace;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .profile-info {
@@ -117,7 +115,6 @@
             line-height: 1.4;
         }
 
-        /* Блок с ссылками */
         .links-section {
             background: #ffffff;
             border: 2px inset #808080;
@@ -140,7 +137,6 @@
             gap: 8px;
         }
 
-        /* Кнопки ссылок в стиле Win98 */
         .social-links a {
             display: flex;
             align-items: center;
@@ -165,7 +161,6 @@
             color: #000080;
         }
 
-        /* Текстовые иконки без смайликов */
         .icon {
             font-family: "Courier New", monospace;
             font-weight: bold;
@@ -178,7 +173,6 @@
             text-align: center;
         }
 
-        /* Нижний статус-бар */
         .status-bar {
             margin-top: 12px;
             display: flex;
@@ -203,7 +197,6 @@
             border: 1px solid #808080;
         }
 
-        /* Адаптивность для экранов смартфонов */
         @media (max-width: 480px) {
             body {
                 padding: 5px;
@@ -223,7 +216,7 @@
     <div class="window">
         <!-- Заголовок окна -->
         <div class="title-bar">
-            <span>C:\Users\Advokat_Babayki\Homepage.exe</span>
+            <span>C:\Advokat_Babayki\index.html</span>
             <div class="title-bar-controls">
                 <button>_</button>
                 <button>&#9633;</button>
@@ -231,21 +224,23 @@
             </div>
         </div>
 
-        <!-- Контент -->
         <div class="window-body">
             
-            <!-- Бегущая строка -->
+            <!-- ======================================================= -->
+            <!--   ИЗМЕНЯТЬ БЕГУЩУЮ ЗЕЛЕНУЮ СТРОКУ ВНУТРИ ТЕГА MARQUEE:  -->
+            <!-- ======================================================= -->
             <div class="marquee-box">
-                <marquee scrollamount="4">*** WELCOME TO ADVOKAT_BABAYKI HOMEPAGE *** SYSTEM STATUS: ONLINE ***</marquee>
+                <marquee scrollamount="4">*** WELCOME TO ADVOKAT BABAYKI HOMEPAGE *** SYSTEM STATUS: ONLINE ***</marquee>
             </div>
 
-            <!-- Карточка с краткой информацией -->
+            <!-- Карточка профиля -->
             <div class="profile-card">
                 <div class="avatar">
-                    [ AVATAR ]
+                    <!-- Замени avatar.png на имя своего картинки в репозитории -->
+                    <img src="avatar.png" alt="Advokat Babayki" onerror="this.parentElement.innerHTML='[ AVATAR ]'">
                 </div>
                 <div class="profile-info">
-                    <h1>Advokat_Babayki</h1>
+                    <h1>Advokat Babayki</h1>
                     <p>Персональная визитная карточка. Ссылки на контакты и проекты ниже.</p>
                 </div>
             </div>
@@ -272,19 +267,11 @@
                         </a>
                     </li>
 
-                    <!-- 
-                        ==================================================
-                        ШАБЛОН ДЛЯ ДОБАВЛЕНИЯ НОВОЙ ССЫЛКИ:
-                        Скопируйте блок ниже (от <li> до </li>),
-                        измените href, маркер [текст] и описание.
-                        ==================================================
+                    <!--
+                        ЕСЛИ ПОТРЕБУЕТСЯ ДОБАВИТЬ НОВУЮ СОЦСЕТЬ:
+                        Скопируй один из блоков <li> выше, вставь его сюда
+                        и поменяй ссылку href, маркер [..] и название.
                     -->
-                    <li>
-                        <a href="https://example.com" target="_blank" rel="noopener">
-                            <span class="icon">[+]</span>
-                            <span>Новый ресурс / Соцсеть</span>
-                        </a>
-                    </li>
 
                 </ul>
             </div>
