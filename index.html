@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advokat-Babayki</title>
+    <title>Личная страница // Personal Homepage</title>
     <style>
+        /* Основной сброс и стиль фона в духе рабочего стола Win2k */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -12,97 +13,285 @@
         }
 
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
+            background-color: #008080; /* Классический бирюзовый teal */
+            font-family: "MS Sans Serif", "Tahoma", "Courier New", monospace;
+            color: #000;
+            padding: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
         }
 
-        .card {
-            background-color: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            padding: 32px;
-            max-width: 480px;
+        /* Главное окно программы / сайта */
+        .window {
+            background: #c0c0c0;
             width: 100%;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+            max-width: 680px;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
         }
 
-        .badge {
-            display: inline-flex;
+        /* Заголовок окна */
+        .title-bar {
+            background: linear-gradient(90deg, #000080, #1084d0);
+            color: #ffffff;
+            font-weight: bold;
+            padding: 3px 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .title-bar-controls button {
+            width: 16px;
+            height: 14px;
+            font-size: 9px;
+            line-height: 10px;
+            font-weight: bold;
+            background: #c0c0c0;
+            border: 1px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            cursor: pointer;
+            margin-left: 2px;
+        }
+
+        /* Внутреннее содержимое окна */
+        .window-body {
+            padding: 12px;
+        }
+
+        /* Бегущая строка */
+        .marquee-box {
+            background: #000;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
+            padding: 4px;
+            border: 2px inset #808080;
+            margin-bottom: 12px;
+            font-size: 13px;
+        }
+
+        /* Секция профиля */
+        .profile-card {
+            background: #fff;
+            border: 2px inset #808080;
+            padding: 12px;
+            margin-bottom: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            background: #e0e0e0;
+            border: 2px solid #808080;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #666;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .profile-info {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .profile-info h1 {
+            font-size: 18px;
+            margin-bottom: 6px;
+            color: #000080;
+        }
+
+        .profile-info p {
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        /* Блок с ссылками */
+        .links-section {
+            background: #ffffff;
+            border: 2px inset #808080;
+            padding: 12px;
+        }
+
+        .links-section h2 {
+            font-size: 14px;
+            background: #c0c0c0;
+            padding: 2px 6px;
+            border: 1px solid #808080;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .social-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* Кнопки ссылок в стиле Win98 */
+        .social-links a {
+            display: flex;
             align-items: center;
             gap: 8px;
-            background-color: #064e3b;
-            color: #34d399;
-            padding: 4px 12px;
-            border-radius: 9999px;
-            font-size: 13px;
-            font-weight: 500;
-            margin-bottom: 20px;
-            border: 1px solid #059669;
-        }
-
-        .badge-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #10b981;
-            border-radius: 50%;
-        }
-
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #f1f5f9;
-        }
-
-        p {
-            color: #94a3b8;
-            line-height: 1.6;
-            margin-bottom: 24px;
-            font-size: 15px;
-        }
-
-        .links {
-            display: flex;
-            gap: 12px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 18px;
-            border-radius: 6px;
+            padding: 6px 10px;
+            background: #c0c0c0;
+            color: #000;
             text-decoration: none;
-            font-weight: 500;
-            font-size: 14px;
-            transition: background-color 0.2s ease;
+            font-weight: bold;
+            font-size: 13px;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
         }
 
-        .btn-primary {
-            background-color: #3b82f6;
-            color: #ffffff;
+        .social-links a:active {
+            border-color: #808080 #ffffff #ffffff #808080;
+            padding: 7px 9px 5px 11px; /* Эффект нажатия */
         }
 
-        .btn-primary:hover {
-            background-color: #2563eb;
+        .social-links a:hover {
+            background: #d4d0c8;
+            color: #000080;
+        }
+
+        .icon {
+            width: 16px;
+            height: 16px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        /* Нижний статус-бар */
+        .status-bar {
+            margin-top: 12px;
+            display: flex;
+            justify-content: space-between;
+            gap: 6px;
+            font-size: 11px;
+        }
+
+        .status-field {
+            background: #c0c0c0;
+            border: 2px inset #808080;
+            padding: 2px 5px;
+            flex: 1;
+        }
+
+        .counter {
+            background: #000;
+            color: #ff0000;
+            font-family: "Courier New", monospace;
+            font-weight: bold;
+            padding: 1px 4px;
+            border: 1px solid #808080;
+        }
+
+        /* Адаптивность для узких экранов телефонов */
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .status-bar {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="badge">
-            <span class="badge-dot"></span>
-            GitHub Pages Active
+
+    <div class="window">
+        <!-- Заголовок окна -->
+        <div class="title-bar">
+            <span>C:\Users\User\Homepage.exe</span>
+            <div class="title-bar-controls">
+                <button>_</button>
+                <button>&#9633;</button>
+                <button>X</button>
+            </div>
         </div>
-        <h1>Advokat-Babayki</h1>
-        <p>Тестовая страница успешно развёрнута. Сайт работает на GitHub Pages.</p>
-        <div class="links">
-            <a href="https://github.com/Advokat-Babayki" class="btn btn-primary" target="_blank">Профиль GitHub</a>
+
+        <!-- Контент -->
+        <div class="window-body">
+            
+            <!-- Бегущая строка -->
+            <div class="marquee-box">
+                <marquee scrollamount="4">*** ДОБРО ПОЖАЛУАТЬ НА МОЙ ЛИЧНЫЙ САЙТ *** LATEST UPDATE: 2000-10-24 ***</marquee>
+            </div>
+
+            <!-- Карточка с краткой информацией -->
+            <div class="profile-card">
+                <div class="avatar">
+                    [ AVATAR ]
+                </div>
+                <div class="profile-info">
+                    <h1>Имя / Никнейм</h1>
+                    <p>Приветствую! Это моя персональная визитная карточка в сети. Здесь вы можете найти ссылки на мои профили и контакты.</p>
+                </div>
+            </div>
+
+            <!-- Список соцсетей -->
+            <div class="links-section">
+                <h2>[Мои Контакты & Соцсети]</h2>
+                
+                <ul class="social-links">
+                    
+                    <!-- TELEGRAM -->
+                    <li>
+                        <a href="https://t.me/YOUR_USERNAME" target="_blank" rel="noopener">
+                            <span class="icon">✈️</span>
+                            <span>Telegram: @YOUR_USERNAME</span>
+                        </a>
+                    </li>
+
+                    <!-- GITHUB -->
+                    <li>
+                        <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener">
+                            <span class="icon">🐱</span>
+                            <span>GitHub: YOUR_USERNAME</span>
+                        </a>
+                    </li>
+
+                    <!-- 
+                        ==================================================
+                        ШАБЛОН ДЛЯ ДОБАВЛЕНИЯ НОВОЙ СОЦСЕТИ:
+                        Скопируйте блок ниже (от <li> до </li>), 
+                        измените href, иконку и название.
+                        ==================================================
+                    -->
+                    <li>
+                        <a href="https://example.com" target="_blank" rel="noopener">
+                            <span class="icon">🌐</span>
+                            <span>Мой Блог / Другая соцсеть</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- Статус-бар внизу -->
+            <div class="status-bar">
+                <div class="status-field">Status: Online</div>
+                <div class="status-field">
+                    Visitors: <span class="counter">00420</span>
+                </div>
+            </div>
+
         </div>
     </div>
+
 </body>
 </html>
