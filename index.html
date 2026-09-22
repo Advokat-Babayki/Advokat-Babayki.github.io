@@ -91,6 +91,8 @@
             justify-content: center;
             flex-shrink: 0;
             overflow: hidden;
+            font-size: 10px;
+            font-family: "Courier New", monospace;
         }
 
         .avatar img {
@@ -236,8 +238,7 @@
             <!-- Карточка профиля -->
             <div class="profile-card">
                 <div class="avatar">
-                    <!-- Замени avatar.png на имя своего картинки в репозитории -->
-                    <img src="avatar.png" alt="Advokat Babayki" onerror="this.parentElement.innerHTML='[ AVATAR ]'">
+                    <img src="avatar.jpeg" alt="Advokat Babayki" onerror="if(this.src.endsWith('.jpeg')){this.src='avatar.jpg';}else{this.parentElement.innerHTML='[ AVATAR ]';}">
                 </div>
                 <div class="profile-info">
                     <h1>Advokat Babayki</h1>
