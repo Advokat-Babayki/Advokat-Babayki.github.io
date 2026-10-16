@@ -33,11 +33,21 @@
 
         body {
             background-color: #008080;
+            background-image:
+                radial-gradient(ellipse 90% 55% at 50% -10%, rgba(255, 255, 255, 0.22), transparent 60%),
+                radial-gradient(ellipse 70% 45% at 50% 110%, rgba(0, 0, 0, 0.28), transparent 62%),
+                radial-gradient(rgba(255, 255, 255, 0.10) 1px, transparent 1.6px),
+                radial-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1.6px),
+                repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.055) 0 2px, transparent 2px 10px),
+                linear-gradient(180deg, #009191 0%, #008080 38%, #006f6f 100%);
+            background-size: auto, auto, 22px 22px, 22px 22px, auto, auto;
+            background-position: 0 0, 0 0, 0 0, 11px 11px, 0 0, 0 0;
+            background-attachment: fixed;
             color: #000;
             padding: 15px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             min-height: 100vh;
         }
 
