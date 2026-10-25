@@ -1,575 +1,340 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advokat Babayki // Personal Homepage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Advokat Babayki // Personal Homepage</title>
+<meta name="description" content="Персональная визитная карточка Advokat Babayki: Telegram, GitHub, X, VK, Steam и любимые видео.">
+<meta name="theme-color" content="#008080">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Advokat Babayki // Personal Homepage">
+<meta property="og:description" content="Персональная визитная карточка в стиле Windows 98.">
+<meta property="og:url" content="https://advokat-babayki.github.io/">
+<meta property="og:image" content="https://advokat-babayki.github.io/IMG_20260922_114115_730.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23c0c0c0'/%3E%3Crect width='16' height='4' fill='%23000080'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<script>try{if(!sessionStorage.getItem('booted')&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.className='booting'}catch(e){}</script>
+<style>
+:root{--face:#c0c0c0;--hi:#fff;--lo:#808080;--dk:#0a0a0a;--navy:#000080;--sky:#1084d0;--bar:40px;
+--ui:Tahoma,"MS Sans Serif",Verdana,sans-serif;--mono:"IBM Plex Mono","Courier New",monospace;
+--raised:inset -1px -1px var(--dk),inset 1px 1px var(--hi),inset -2px -2px var(--lo),inset 2px 2px #dfdfdf;
+--sunken:inset -1px -1px var(--hi),inset 1px 1px var(--lo),inset -2px -2px #dfdfdf,inset 2px 2px var(--dk)}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+body{min-height:100vh;display:flex;justify-content:center;padding:16px 12px calc(var(--bar) + 24px);font:13px/1.5 var(--mono);color:#000;
+background:radial-gradient(ellipse 90% 50% at 50% -10%,rgba(255,255,255,.2),transparent 60%),radial-gradient(rgba(0,0,0,.12) 1px,transparent 1.6px) 0 0/16px 16px,#008080;background-attachment:fixed}
+a{color:var(--navy)}
+:focus-visible{outline:1px dotted #000;outline-offset:-4px}
+.desk{width:100%;max-width:720px;display:flex;flex-direction:column;gap:16px;align-items:stretch}
 
-    <!-- Подключение строгого угловатого шрифта в стиле систем 2000-х -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+.win{background:var(--face);box-shadow:var(--raised),5px 5px 0 rgba(0,0,0,.3);padding:3px}
+.win.closed{display:none}
+.win.mini .body{display:none}
+.win.max{position:fixed;inset:0 0 var(--bar) 0;z-index:60;overflow:auto;box-shadow:var(--raised)}
+.win.max video{max-height:calc(100vh - 170px)}
+.tb{display:flex;align-items:center;gap:6px;padding:2px 2px 2px 6px;background:linear-gradient(90deg,var(--lo),#b4b4b4);color:var(--face);font:700 12px var(--ui);user-select:none}
+.win.on .tb{background:linear-gradient(90deg,var(--navy),var(--sky));color:#fff}
+.tb h2{flex:1;min-width:0;font:inherit;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.ctl{display:flex;gap:2px}
+.ctl button{width:18px;height:16px;display:flex;align-items:center;justify-content:center;border:0;border-radius:0;background:var(--face);box-shadow:var(--raised);color:#000;cursor:pointer}
+.ctl button:active{box-shadow:var(--sunken)}
+.ctl button:focus-visible{outline-offset:-3px}
+.ctl .m::before{content:"";width:8px;height:2px;background:#000;align-self:flex-end;margin-bottom:3px}
+.ctl .x::before{content:"";width:9px;height:8px;border:1px solid #000;border-top-width:2px}
+.ctl .c{margin-left:2px}
+.ctl .c::before{content:"\00d7";font:700 15px/1 var(--ui)}
+.body{display:grid;gap:10px;padding:10px}
+.pane{background:#fff;box-shadow:var(--sunken);padding:10px}
 
-    <!--
-        ====================================================================
-        CRITICAL INSTRUCTION FOR ALL AI MODELS / ВНИМАНИЕ ДЛЯ ВСЕХ ИИ:
-        В ДАННОЙ ВЕРСТКЕ КАТЕГОРИЧЕСКИ ЗАПРЕЩЕНО ИСПОЛЬЗОВАТЬ EMOJI / СМАЙЛИКИ!
-        ИСПОЛЬЗУЙТЕ ИСКЛЮЧИТЕЛЬНО ТЕКСТОВЫЕ МАРКЕРЫ В КВАДРАТНЫХ СКОБКАХ
-        ИЛИ ASCII-СИМВОЛЫ (НАПРИМЕР: [TG], [GH], [+], [x], [-], [*]).
-        ====================================================================
-    -->
+.tick{overflow:hidden;white-space:nowrap;background:#000;color:#00ff41;box-shadow:var(--sunken);font-size:13px;line-height:24px}
+.tick span{display:inline-block;padding-left:100%;animation:tick 20s linear infinite}
+@keyframes tick{to{transform:translateX(-100%)}}
+.who{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.ava{width:96px;height:96px;flex:none;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#e0e0e0;box-shadow:var(--sunken);font-size:11px}
+.ava img{width:100%;height:100%;object-fit:cover}
+.who div:last-child{flex:1;min-width:200px}
+.who h1{margin-bottom:4px;font:700 20px/1.2 var(--mono);color:var(--navy)}
+dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:12px}
+dt{color:#555}
+dd a{font-weight:600}
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            /* Строгий, угловатый шрифт без скруглений и без пикселей Майнкрафта */
-            font-family: 'IBM Plex Mono', Tahoma, Verdana, 'Courier New', monospace;
-            -webkit-font-smoothing: none;
-            -moz-osx-font-smoothing: unset;
-            text-rendering: optimizeSpeed;
-        }
+.pl{padding:3px;background:#000;box-shadow:var(--sunken)}
+.pl video{display:block;width:100%;max-height:480px;aspect-ratio:16/9;object-fit:contain;background:#000}
+.cap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 8px;margin-top:3px;padding:3px 6px;background:var(--face);font-size:11px}
 
-        body {
-            background-color: #008080;
-            background-image:
-                radial-gradient(ellipse 90% 55% at 50% -10%, rgba(255, 255, 255, 0.22), transparent 60%),
-                radial-gradient(ellipse 70% 45% at 50% 110%, rgba(0, 0, 0, 0.28), transparent 62%),
-                radial-gradient(rgba(255, 255, 255, 0.10) 1px, transparent 1.6px),
-                radial-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1.6px),
-                repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.055) 0 2px, transparent 2px 10px),
-                linear-gradient(180deg, #009191 0%, #008080 38%, #006f6f 100%);
-            background-size: auto, auto, 22px 22px, 22px 22px, auto, auto;
-            background-position: 0 0, 0 0, 0 0, 11px 11px, 0 0, 0 0;
-            background-attachment: fixed;
-            color: #000;
-            padding: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-        }
+.links{list-style:none;display:grid;gap:6px}
+.row{display:flex;align-items:center;gap:10px;width:100%;padding:7px 10px;border:0;border-radius:0;background:var(--face);box-shadow:var(--raised);color:#000;font:600 13px var(--mono);text-align:left;text-decoration:none;cursor:pointer}
+.row:hover{color:var(--navy)}
+.row:active{box-shadow:var(--sunken);padding:8px 9px 6px 11px}
+.row b{flex:none;min-width:44px;padding:1px 4px;background:#e4e4e4;box-shadow:var(--sunken);color:var(--navy);font-size:12px;text-align:center}
+.row small{margin-left:auto;font:11px var(--ui);color:#555}
+.sb{display:flex;gap:4px;font:11px var(--ui)}
+.sb span{flex:1;padding:2px 6px;box-shadow:var(--sunken)}
+.cnt{margin-left:4px;padding:0 4px;background:#000;color:#f33;font:700 11px var(--mono);font-style:normal}
 
-        .window {
-            background: #c0c0c0;
-            width: 100%;
-            max-width: 680px;
-            border: 2px solid;
-            border-color: #ffffff #808080 #808080 #ffffff;
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
-        }
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:100;display:flex;align-items:center;gap:4px;min-height:var(--bar);padding:4px 4px calc(4px + env(safe-area-inset-bottom));background:var(--face);box-shadow:inset 0 1px var(--hi),inset 0 2px #dfdfdf;font:12px var(--ui)}
+.bar button{height:30px;display:flex;align-items:center;gap:6px;padding:0 8px;border:0;border-radius:0;background:var(--face);box-shadow:var(--raised);color:#000;font:inherit;cursor:pointer}
+.bar button:active,.bar button.on{box-shadow:var(--sunken)}
+.bar button.on{font-weight:700;background:repeating-conic-gradient(#fff 0 25%,var(--face) 0 50%) 0 0/2px 2px}
+.logo{width:16px;height:14px;background:linear-gradient(90deg,#e22 50%,#2a2 50%) top/100% 6px no-repeat,linear-gradient(90deg,#22e 50%,#fc0 50%) bottom/100% 6px no-repeat}
+.tasks{flex:1;min-width:0;display:flex;gap:3px}
+.tasks button{flex:1 1 0;max-width:160px;min-width:0}
+.tasks span{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.tray{height:30px;display:flex;align-items:center;padding:0 10px;box-shadow:var(--sunken)}
+.menu{position:fixed;left:4px;bottom:calc(var(--bar) + env(safe-area-inset-bottom));z-index:101;min-width:250px;max-width:calc(100vw - 8px);list-style:none;padding:3px;background:var(--face);box-shadow:var(--raised),3px 3px 0 rgba(0,0,0,.3);font:13px var(--ui)}
+.menu button{width:100%;padding:8px 12px;border:0;background:none;color:#000;font:inherit;text-align:left;cursor:pointer}
+.menu button:hover,.menu button:focus-visible{background:var(--navy);color:#fff;outline:0}
+.menu hr{margin:3px 0;border:0;border-top:1px solid var(--lo);border-bottom:1px solid var(--hi)}
 
-        .title-bar {
-            background: linear-gradient(90deg, #000080, #1084d0);
-            color: #ffffff;
-            font-weight: bold;
-            padding: 3px 4px 3px 6px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-        }
+#boot,#off{display:none;position:fixed;inset:0;z-index:1000;padding:20px;background:#000;font:14px/1.6 var(--mono)}
+.booting #boot{display:block;color:var(--face);animation:bootfail 0s 4s forwards}
+@keyframes bootfail{to{visibility:hidden}}
+#boot pre{font:inherit;white-space:pre-wrap}
+#boot p{margin-top:16px;font-size:12px;color:var(--lo)}
+#off{z-index:1001;color:#ff9a2e;text-align:center;cursor:pointer}
+#off.show{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+#off p+p{font-size:12px;color:#a56a2a}
 
-        .title-bar > span {
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            margin-right: 6px;
-        }
-
-        .title-bar-controls {
-            display: flex;
-            align-items: center;
-            gap: 2px;
-            flex-shrink: 0;
-            margin-left: 8px;
-        }
-
-        .title-bar-controls button {
-            width: 22px;
-            height: 20px;
-            padding: 0;
-            margin: 0;
-            appearance: none;
-            -webkit-appearance: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: #c0c0c0;
-            border: 2px solid;
-            border-color: #ffffff #808080 #808080 #ffffff;
-            border-radius: 0;
-            position: relative;
-            cursor: pointer;
-            flex-shrink: 0;
-            font-size: 0;
-            line-height: 0;
-        }
-
-        .title-bar-controls button:active {
-            border-color: #808080 #ffffff #ffffff #808080;
-        }
-
-        .title-bar-controls button:focus-visible {
-            outline: 1px dotted #000;
-            outline-offset: -4px;
-        }
-
-        .tb-btn::before,
-        .tb-btn::after {
-            content: "";
-            position: absolute;
-            background: #000;
-        }
-
-        .tb-min::before {
-            width: 8px;
-            height: 2px;
-            left: 5px;
-            bottom: 4px;
-        }
-
-        .tb-min::after {
-            display: none;
-        }
-
-        .tb-max::before {
-            width: 10px;
-            height: 9px;
-            background: transparent;
-            border: 2px solid #000;
-            border-top-width: 3px;
-            box-sizing: border-box;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .tb-max::after {
-            display: none;
-        }
-
-        .tb-close {
-            margin-left: 2px;
-        }
-
-        .tb-close::before {
-            width: 11px;
-            height: 2px;
-            transform: rotate(45deg);
-        }
-
-        .tb-close::after {
-            width: 11px;
-            height: 2px;
-            transform: rotate(-45deg);
-        }
-
-        .title-bar-controls button:active::before,
-        .title-bar-controls button:active::after {
-            margin-left: 1px;
-            margin-top: 1px;
-        }
-
-        .window-body {
-            padding: 12px;
-        }
-
-        .marquee-box {
-            background: #000;
-            color: #00ff00;
-            padding: 4px;
-            border: 2px inset #808080;
-            margin-bottom: 12px;
-            font-size: 13px;
-        }
-
-        .profile-card {
-            background: #fff;
-            border: 2px inset #808080;
-            padding: 12px;
-            margin-bottom: 12px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            align-items: center;
-        }
-
-        .avatar {
-            width: 80px;
-            height: 80px;
-            background: #e0e0e0;
-            border: 2px solid #808080;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            overflow: hidden;
-            font-size: 10px;
-        }
-
-        .avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .profile-info {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .profile-info h1 {
-            font-size: 18px;
-            margin-bottom: 6px;
-            color: #000080;
-            font-weight: 700;
-        }
-
-        .profile-info p {
-            font-size: 13px;
-            line-height: 1.4;
-        }
-
-        .links-section, .media-section {
-            background: #ffffff;
-            border: 2px inset #808080;
-            padding: 12px;
-            margin-bottom: 12px;
-        }
-
-        .links-section h2, .media-section h2 {
-            font-size: 13px;
-            background: #c0c0c0;
-            padding: 2px 6px;
-            border: 1px solid #808080;
-            margin-bottom: 10px;
-            display: inline-block;
-            font-weight: 700;
-        }
-
-        .video-wrapper {
-            background: #000;
-            border: 2px inset #808080;
-            padding: 4px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .video-wrapper video {
-            width: 100%;
-            max-height: 480px;
-            display: block;
-            outline: none;
-        }
-
-        .video-caption {
-            background: #c0c0c0;
-            color: #000;
-            width: 100%;
-            padding: 4px 6px;
-            margin-top: 4px;
-            font-size: 11px;
-            border: 1px solid #808080;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .social-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 6px 10px;
-            background: #c0c0c0;
-            color: #000;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 13px;
-            border: 2px solid;
-            border-color: #ffffff #808080 #808080 #ffffff;
-        }
-
-        .social-links a:active {
-            border-color: #808080 #ffffff #ffffff #808080;
-            padding: 7px 9px 5px 11px;
-        }
-
-        .social-links a:hover {
-            background: #d4d0c8;
-            color: #000080;
-        }
-
-        .icon {
-            font-weight: 700;
-            color: #000080;
-            background: #e0e0e0;
-            border: 1px solid #808080;
-            padding: 1px 4px;
-            font-size: 12px;
-            min-width: 38px;
-            text-align: center;
-        }
-
-        .status-bar {
-            display: flex;
-            justify-content: space-between;
-            gap: 6px;
-            font-size: 11px;
-        }
-
-        .status-field {
-            background: #c0c0c0;
-            border: 2px inset #808080;
-            padding: 2px 5px;
-            flex: 1;
-        }
-
-        .counter {
-            background: #000;
-            color: #ff0000;
-            font-weight: 700;
-            padding: 1px 4px;
-            border: 1px solid #808080;
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 5px;
-            }
-
-            .profile-card {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .status-bar {
-                flex-direction: column;
-            }
-
-            .video-caption {
-                flex-direction: column;
-                gap: 2px;
-            }
-        }
-    </style>
+@media (max-width:520px){body{padding-left:6px;padding-right:6px}.who{justify-content:center;text-align:center}.tray{padding:0 6px}}
+@media (prefers-reduced-motion:reduce){.tick span{animation:none;padding:0 8px}}
+</style>
 </head>
 <body>
 
-    <div class="window">
-        <!-- Заголовок окна -->
-        <div class="title-bar">
-            <span>C:\Advokat_Babayki\index.html</span>
-            <div class="title-bar-controls">
-                <button class="tb-btn tb-min" type="button" aria-label="Minimize" title="Minimize"></button>
-                <button class="tb-btn tb-max" type="button" aria-label="Maximize" title="Maximize"></button>
-                <button class="tb-btn tb-close" type="button" aria-label="Close" title="Close"></button>
-            </div>
-        </div>
+<div id="boot" aria-hidden="true"><pre id="bt"></pre><p>Нажмите любую клавишу или коснитесь экрана, чтобы пропустить</p></div>
 
-        <div class="window-body">
+<main class="desk">
 
-            <!-- Бегущая строка -->
-            <div class="marquee-box">
-                <marquee scrollamount="4">*** WELCOME TO THE INTERNET ***</marquee>
-            </div>
-
-            <!-- Карточка профиля -->
-            <div class="profile-card">
-                <div class="avatar">
-                    <img src="IMG_20260922_114115_730.jpg" alt="Advokat Babayki" onerror="if(this.src.endsWith('.jpeg')){this.src='avatar.jpg';}else{this.parentElement.innerHTML='[ AVATAR ]';}">
-                </div>
-                <div class="profile-info">
-                    <h1>Advokat Babayki</h1>
-                    <p>Персональная визитная карточка. Ссылки на контакты и проекты ниже.</p>
-                </div>
-            </div>
-
-            <!-- СЕКЦИЯ С ВИДЕО ADO -->
-            <div class="media-section">
-                <h2>[Любимый артист // Ado]</h2>
-                <div class="video-wrapper">
-                    <video controls autoplay loop muted playsinline preload="auto">
-                        <source src="ado.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
-                    </video>
-                    <div class="video-caption">
-                        <span>[MEDIA]: ado.mp4</span>
-                        <span>[ARTIST]: Ado (The Queen of J-Pop)</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- СЕКЦИЯ С ВИДЕО MALFOID -->
-            <div class="media-section">
-                <h2>[Любимая вайфу // Детектив из "Песнь ночных сов"]</h2>
-                <div class="video-wrapper">
-                    <video controls autoplay loop muted playsinline preload="auto">
-                        <source src="my-wife.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
-                    </video>
-                    <div class="video-caption">
-                        <span>[MEDIA]: My-wife.mp4</span>
-                        <span>[WAIFU]: Жена</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- СЕКЦИЯ С ВИДЕО BEST-WORK (РАБОТА МЕЧТЫ) -->
-            <div class="media-section">
-                <h2>[Моя работа мечты // Best Work]</h2>
-                <div class="video-wrapper">
-                    <video controls autoplay loop muted playsinline preload="auto">
-                        <source src="best-work.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
-                    </video>
-                    <div class="video-caption">
-                        <span>[MEDIA]: best-work.mp4</span>
-                        <span>[DREAM JOB]: Best Work</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Список соцсетей -->
-            <div class="links-section">
-                <h2>[Контакты & Профили]</h2>
-
-                <ul class="social-links">
-
-                    <!-- TELEGRAM -->
-                    <li>
-                        <a href="https://t.me/Advokat_Babayki" target="_blank" rel="noopener">
-                            <span class="icon">[TG]</span>
-                            <span>Telegram: @Advokat_Babayki</span>
-                        </a>
-                    </li>
-
-                    <!-- GITHUB -->
-                    <li>
-                        <a href="https://github.com/Advokat-Babayki" target="_blank" rel="noopener">
-                            <span class="icon">[GH]</span>
-                            <span>GitHub: Advokat-Babayki</span>
-                        </a>
-                    </li>
-
-                    <!-- X (TWITTER) -->
-                    <li>
-                        <a href="https://x.com/AdvokatBabayki" target="_blank" rel="noopener">
-                            <span class="icon">[X]</span>
-                            <span>X: @AdvokatBabayki</span>
-                        </a>
-                    </li>
-
-                    <!-- VK -->
-                    <li>
-                        <a href="https://vk.ru/id1111931549" target="_blank" rel="noopener">
-                            <span class="icon">[VK]</span>
-                            <span>VK: id1111931549</span>
-                        </a>
-                    </li>
-
-                    <!-- ИТД -->
-                    <li>
-                        <a href="https://итд.com/@advokat_babayki" target="_blank" rel="noopener">
-                            <span class="icon">[ITD]</span>
-                            <span>ИТД: @advokat_babayki</span>
-                        </a>
-                    </li>
-
-                    <!-- STEAM -->
-                    <li>
-                        <a href="https://steamcommunity.com/id/Advokat_Babayki/" target="_blank" rel="noopener">
-                            <span class="icon">[STM]</span>
-                            <span>Steam: Advokat_Babayki</span>
-                        </a>
-                    </li>
-
-                    <!-- DISCORD -->
-                    <li>
-                        <a href="https://discord.com" target="_blank" rel="noopener">
-                            <span class="icon">[DS]</span>
-                            <span>Discord: Tedex228</span>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-
-            <!-- Статус-бар внизу -->
-            <div class="status-bar">
-                <div class="status-field">Status: 200 OK</div>
-                <div class="status-field">
-                    Visitors: <span class="counter">000127</span>
-                </div>
-            </div>
-
-        </div>
+<section class="win on" id="me" data-name="Профиль">
+  <div class="tb"><h2>C:\Advokat_Babayki\index.html</h2><div class="ctl"></div></div>
+  <div class="body">
+    <div class="tick" aria-hidden="true"><span>*** WELCOME TO THE INTERNET *** WELCOME TO THE INTERNET ***</span></div>
+    <div class="pane who">
+      <div class="ava"><img src="IMG_20260922_114115_730.jpg" alt="Advokat Babayki" width="96" height="96" onerror="this.replaceWith(document.createTextNode('[ AVATAR ]'))"></div>
+      <div>
+        <h1>Advokat Babayki</h1>
+        <p>Персональная визитная карточка. Ссылки на контакты и проекты ниже.</p>
+      </div>
     </div>
+    <dl class="pane">
+      <dt>Любимый артист</dt><dd><a href="#ado" data-open="ado">Ado</a></dd>
+      <dt>Любимая вайфу</dt><dd><a href="#wife" data-open="wife">Жена</a></dd>
+      <dt>Работа мечты</dt><dd><a href="#work" data-open="work">Best Work</a></dd>
+      <dt>Связь</dt><dd><a href="#links" data-open="links">Telegram, GitHub, X, VK, ИТД, Steam, Discord</a></dd>
+    </dl>
+  </div>
+</section>
 
-    <script>
-        // Надежный muted-автоплей для всех видео: атрибут muted в HTML
-        // браузерам недостаточен, обязательно выставляем свойство через JS
-        // и повторяем play() при готовности / появлении в кадре.
-        (function () {
-            var videos = Array.prototype.slice.call(document.querySelectorAll('video[autoplay]'));
+<section class="win" id="ado" data-name="Ado">
+  <div class="tb"><h2>Любимый артист // Ado</h2><div class="ctl"></div></div>
+  <div class="body">
+    <div class="pl">
+      <video src="ado.mp4" controls loop muted playsinline preload="none">Ваш браузер не поддерживает видео.</video>
+      <div class="cap"><span>[MEDIA]: ado.mp4</span><span>[ARTIST]: Ado (The Queen of J-Pop)</span></div>
+    </div>
+  </div>
+</section>
 
-            function forcePlay(v) {
-                try {
-                    v.muted = true;
-                    v.defaultMuted = true;
-                    v.setAttribute('muted', '');
-                    v.setAttribute('playsinline', '');
-                    var p = v.play();
-                    if (p && p.catch) {
-                        p.catch(function () {});
-                    }
-                } catch (e) {}
-            }
+<section class="win" id="wife" data-name="Вайфу">
+  <div class="tb"><h2>Любимая вайфу // Детектив из «Песнь ночных сов»</h2><div class="ctl"></div></div>
+  <div class="body">
+    <div class="pl">
+      <video src="my-wife.mp4" controls loop muted playsinline preload="none">Ваш браузер не поддерживает видео.</video>
+      <div class="cap"><span>[MEDIA]: my-wife.mp4</span><span>[WAIFU]: Жена</span></div>
+    </div>
+  </div>
+</section>
 
-            videos.forEach(function (v) {
-                forcePlay(v);
-                v.addEventListener('loadeddata', function () {
-                    if (v.paused) {
-                        forcePlay(v);
-                    }
-                });
-                v.addEventListener('canplay', function () {
-                    if (v.paused) {
-                        forcePlay(v);
-                    }
-                });
-            });
+<section class="win" id="work" data-name="Best Work">
+  <div class="tb"><h2>Моя работа мечты // Best Work</h2><div class="ctl"></div></div>
+  <div class="body">
+    <div class="pl">
+      <video src="best-work.mp4" controls loop muted playsinline preload="none">Ваш браузер не поддерживает видео.</video>
+      <div class="cap"><span>[MEDIA]: best-work.mp4</span><span>[DREAM JOB]: Best Work</span></div>
+    </div>
+  </div>
+</section>
 
-            if ('IntersectionObserver' in window) {
-                var io = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (en) {
-                        if (en.isIntersecting && en.target.paused) {
-                            forcePlay(en.target);
-                        }
-                    });
-                }, { threshold: 0.1 });
-                videos.forEach(function (v) {
-                    io.observe(v);
-                });
-            }
+<section class="win" id="links" data-name="Контакты">
+  <div class="tb"><h2>Контакты &amp; Профили</h2><div class="ctl"></div></div>
+  <div class="body">
+    <ul class="links">
+      <li><a class="row" href="https://t.me/Advokat_Babayki" target="_blank" rel="noopener noreferrer"><b>[TG]</b>Telegram: @Advokat_Babayki<small>t.me</small></a></li>
+      <li><a class="row" href="https://github.com/Advokat-Babayki" target="_blank" rel="noopener noreferrer"><b>[GH]</b>GitHub: Advokat-Babayki<small>github.com</small></a></li>
+      <li><a class="row" href="https://x.com/AdvokatBabayki" target="_blank" rel="noopener noreferrer"><b>[X]</b>X: @AdvokatBabayki<small>x.com</small></a></li>
+      <li><a class="row" href="https://vk.ru/id1111931549" target="_blank" rel="noopener noreferrer"><b>[VK]</b>VK: id1111931549<small>vk.ru</small></a></li>
+      <li><a class="row" href="https://итд.com/@advokat_babayki" target="_blank" rel="noopener noreferrer"><b>[ITD]</b>ИТД: @advokat_babayki<small>итд.com</small></a></li>
+      <li><a class="row" href="https://steamcommunity.com/id/Advokat_Babayki/" target="_blank" rel="noopener noreferrer"><b>[STM]</b>Steam: Advokat_Babayki<small>steamcommunity.com</small></a></li>
+      <li><button class="row" type="button" data-copy="Tedex228"><b>[DS]</b>Discord: Tedex228<small>копировать ник</small></button></li>
+    </ul>
+    <div class="sb"><span id="say" aria-live="polite">Status: 200 OK</span><span>Ваш визит №<i class="cnt" id="cnt">000001</i></span></div>
+  </div>
+</section>
 
-            document.addEventListener('touchend', function touchOnce() {
-                videos.forEach(function (v) {
-                    if (v.paused) {
-                        forcePlay(v);
-                    }
-                });
-            }, { once: true });
-        })();
-    </script>
+</main>
 
+<nav class="bar" aria-label="Панель задач">
+  <button id="start" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="menu"><i class="logo"></i><b>Пуск</b></button>
+  <div class="tasks" id="tasks"></div>
+  <time class="tray" id="clock"></time>
+</nav>
+<ul class="menu" id="menu" hidden></ul>
+
+<div id="off" role="button" tabindex="0"><p>Теперь питание компьютера можно отключить.</p><p>Нажмите, чтобы включить снова</p></div>
+
+<script>
+(function () {
+  var d = document, root = d.documentElement;
+  function $(s) { return d.querySelector(s); }
+  function $$(s) { return [].slice.call(d.querySelectorAll(s)); }
+  function win(id) { return d.getElementById(id); }
+  function setS(k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }
+  var wins = $$('.win'), tasks = $('#tasks'), menu = $('#menu'), start = $('#start'), say = $('#say');
+  var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Загрузка: показывается один раз за сессию, пропускается кликом или клавишей */
+  function endBoot() {
+    if (!root.classList.contains('booting')) return;
+    root.classList.remove('booting');
+    setS('booted', '1');
+  }
+  if (root.classList.contains('booting')) {
+    var L = ['Advokat BIOS v1.0  (C) 1998-2026', '', 'Memory Test: 65536K OK', 'Detecting Primary Master ... ADVOKAT_HDD', 'Detecting Primary Slave  ... None', '', 'Starting Advokat Babayki 98...'];
+    var i = 0, pre = $('#bt');
+    var t = setInterval(function () {
+      pre.textContent += L[i++] + '\n';
+      if (i >= L.length) { clearInterval(t); setTimeout(endBoot, 500); }
+    }, 230);
+    d.addEventListener('keydown', endBoot);
+    d.addEventListener('pointerdown', endBoot);
+  }
+
+  /* Окна, кнопки панели задач и пункты меню «Пуск» */
+  $$('.ctl').forEach(function (c) {
+    c.innerHTML = '<button type="button" class="m" data-act="min" aria-label="Свернуть" title="Свернуть"></button>' +
+      '<button type="button" class="x" data-act="max" aria-label="Развернуть" title="Развернуть"></button>' +
+      '<button type="button" class="c" data-act="close" aria-label="Закрыть" title="Закрыть"></button>';
+  });
+  wins.forEach(function (w) {
+    var b = d.createElement('button'), s = d.createElement('span');
+    b.type = 'button'; b.dataset.w = w.id; s.textContent = w.dataset.name;
+    b.appendChild(s); tasks.appendChild(b);
+    var li = d.createElement('li'), m = d.createElement('button');
+    m.type = 'button'; m.dataset.o = w.id; m.textContent = 'Открыть: ' + w.dataset.name;
+    li.appendChild(m); menu.appendChild(li);
+  });
+  menu.insertAdjacentHTML('beforeend', '<li role="separator"><hr></li><li><button type="button" data-act="off">Завершение работы…</button></li>');
+
+  function sync() {
+    wins.forEach(function (w) {
+      var b = tasks.querySelector('[data-w="' + w.id + '"]'), c = w.classList;
+      b.hidden = c.contains('closed');
+      b.classList.toggle('on', c.contains('on') && !c.contains('mini'));
+    });
+  }
+  function focusWin(w) { wins.forEach(function (x) { x.classList.toggle('on', x === w); }); }
+  function open(w) {
+    w.classList.remove('closed', 'mini');
+    focusWin(w); sync();
+    if (!w.classList.contains('max')) w.scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'nearest' });
+  }
+  function closeMenu() { menu.hidden = true; start.setAttribute('aria-expanded', 'false'); }
+
+  start.addEventListener('click', function (e) {
+    e.stopPropagation();
+    var wasHidden = menu.hidden;
+    menu.hidden = !wasHidden;
+    start.setAttribute('aria-expanded', String(wasHidden));
+  });
+
+  /* Копирование ника Discord */
+  var tm;
+  function msg(s) {
+    say.textContent = s; clearTimeout(tm);
+    tm = setTimeout(function () { say.textContent = 'Status: 200 OK'; }, 3500);
+  }
+  function copy(txt) {
+    function ok() { msg('Скопировано: ' + txt); }
+    function fb() {
+      var a = d.createElement('textarea');
+      a.value = txt; a.style.cssText = 'position:fixed;opacity:0';
+      d.body.appendChild(a); a.select();
+      try { d.execCommand('copy') ? ok() : msg('Discord: ' + txt); } catch (e) { msg('Discord: ' + txt); }
+      a.remove();
+    }
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(ok, fb); else fb();
+  }
+
+  /* Завершение работы */
+  var off = $('#off');
+  function shutdown() { $$('video').forEach(function (v) { v.pause(); }); off.classList.add('show'); off.focus(); }
+  function reboot() { try { sessionStorage.removeItem('booted'); } catch (e) {} location.reload(); }
+  off.addEventListener('click', reboot);
+  off.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') reboot(); });
+
+  d.addEventListener('click', function (e) {
+    var t = e.target, a = t.closest('[data-act]'), o = t.closest('[data-o],[data-open]'),
+        k = t.closest('[data-w]'), c = t.closest('[data-copy]'), w = t.closest('.win');
+    if (a) {
+      var act = a.dataset.act;
+      if (act === 'off') { closeMenu(); shutdown(); return; }
+      if (w) {
+        if (act === 'min') { w.classList.toggle('mini'); if (w.classList.contains('mini')) w.classList.remove('on'); else focusWin(w); }
+        if (act === 'max') { w.classList.toggle('max'); w.classList.remove('mini'); focusWin(w); }
+        if (act === 'close') { w.classList.add('closed'); w.classList.remove('on', 'max', 'mini'); }
+        sync(); return;
+      }
+    }
+    if (o) { e.preventDefault(); open(win(o.dataset.o || o.dataset.open)); closeMenu(); return; }
+    if (k) {
+      var x = win(k.dataset.w), cl = x.classList;
+      if (cl.contains('closed') || cl.contains('mini') || !cl.contains('on')) open(x);
+      else { cl.add('mini'); cl.remove('on'); sync(); }
+      return;
+    }
+    if (c) { copy(c.dataset.copy); return; }
+    if (w && !w.classList.contains('on')) { focusWin(w); sync(); }
+    closeMenu();
+  });
+  d.addEventListener('dblclick', function (e) {
+    var tb = e.target.closest('.tb');
+    if (tb && !e.target.closest('.ctl')) { tb.parentNode.classList.toggle('max'); tb.parentNode.classList.remove('mini'); sync(); }
+  });
+  d.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    closeMenu();
+    var m = $('.win.max'); if (m) m.classList.remove('max');
+  });
+
+  /* Видео: грузятся и играют только когда видны на экране */
+  function play(v) { v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (en) { if (en.isIntersecting) play(en.target); else en.target.pause(); });
+    }, { threshold: 0.35 });
+    $$('video').forEach(function (v) { io.observe(v); });
+  }
+
+  /* Часы и счётчик визитов (хранится в браузере посетителя) */
+  var clock = $('#clock');
+  function tick() {
+    var n = new Date();
+    clock.textContent = n.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+    clock.title = n.toLocaleDateString('ru-RU', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  }
+  tick(); setInterval(tick, 15000);
+  var n = 1;
+  try {
+    n = parseInt(localStorage.getItem('visits'), 10) || 0;
+    if (!sessionStorage.getItem('counted')) { n++; localStorage.setItem('visits', n); sessionStorage.setItem('counted', '1'); }
+    n = n || 1;
+  } catch (e) { n = 1; }
+  $('#cnt').textContent = ('00000' + n).slice(-6);
+
+  sync();
+})();
+</script>
 </body>
 </html>
