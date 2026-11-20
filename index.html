@@ -63,10 +63,10 @@ dd a:hover{border-color:var(--y)}
 .cap span:last-child{color:var(--a)}
 
 /* Галерея мечты: снап-скролл, стрелки, свайпы */
-.pl.gal{position:relative}
+.pl.gal{position:relative;min-width:0}
 .gal-track{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .gal-track::-webkit-scrollbar{display:none}
-.gal-track img{flex:0 0 100%;height:auto;max-height:520px;object-fit:contain;scroll-snap-align:center}
+.gal-track img{flex:0 0 100%;min-width:0;height:auto;max-height:520px;object-fit:contain;scroll-snap-align:center}
 .gal-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:42px;height:42px;display:flex;align-items:center;justify-content:center;border:1px solid var(--a);background:rgba(10,10,15,.85);color:var(--a);font:700 20px var(--mono);cursor:pointer;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%)}
 .gal-btn:hover,.gal-btn:focus-visible{background:var(--a);color:#000;outline:0}
 .gal-prev{left:10px}.gal-next{right:10px}
